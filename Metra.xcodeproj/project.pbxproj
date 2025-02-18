@@ -35,16 +35,6 @@
 			path = Metra;
 			sourceTree = "<group>";
 		};
-		B5728FA72D64DD1F0006DBD9 /* MetraTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MetraTests;
-			sourceTree = "<group>";
-		};
-		B5728FB12D64DD1F0006DBD9 /* MetraUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MetraUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				B5728F942D64DD1D0006DBD9 /* Metra */,
-				B5728FA72D64DD1F0006DBD9 /* MetraTests */,
-				B5728FB12D64DD1F0006DBD9 /* MetraUITests */,
 				B5728F932D64DD1D0006DBD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				B5728FA62D64DD1F0006DBD9 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				B5728FA72D64DD1F0006DBD9 /* MetraTests */,
-			);
 			name = MetraTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				B5728FB02D64DD1F0006DBD9 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				B5728FB12D64DD1F0006DBD9 /* MetraUITests */,
 			);
 			name = MetraUITests;
 			packageProductDependencies = (
