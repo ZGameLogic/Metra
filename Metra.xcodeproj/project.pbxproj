@@ -6,33 +6,85 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B5728FE42D64E44E0006DBD9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5728FC72D64DE8A0006DBD9 /* WidgetKit.framework */; };
+		B5728FE52D64E44E0006DBD9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5728FC92D64DE8C0006DBD9 /* SwiftUI.framework */; };
+		B5728FF42D64E4540006DBD9 /* Metra GraphsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5728FFF2D64E6F50006DBD9 /* Wraith Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */; };
+		B57290002D64E6F50006DBD9 /* Wraith Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */; };
+		B57290032D64E9CD0006DBD9 /* Configuration Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57290022D64E9CD0006DBD9 /* Configuration Item.swift */; };
+		B57290042D64E9CD0006DBD9 /* Configuration Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57290022D64E9CD0006DBD9 /* Configuration Item.swift */; };
+		B572900C2D677EF40006DBD9 /* Train Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572900B2D677EF40006DBD9 /* Train Data.swift */; };
+		B572900D2D677EF40006DBD9 /* Train Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572900B2D677EF40006DBD9 /* Train Data.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		B5728FA52D64DD1F0006DBD9 /* PBXContainerItemProxy */ = {
+		B5728FF22D64E4540006DBD9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5728F8A2D64DD1D0006DBD9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B5728F912D64DD1D0006DBD9;
-			remoteInfo = Metra;
-		};
-		B5728FAF2D64DD1F0006DBD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5728F8A2D64DD1D0006DBD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B5728F912D64DD1D0006DBD9;
-			remoteInfo = Metra;
+			remoteGlobalIDString = B5728FE22D64E44E0006DBD9;
+			remoteInfo = "Metra GraphsExtension";
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B5728FDE2D64DE8E0006DBD9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B5728FF42D64E4540006DBD9 /* Metra GraphsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B5728F922D64DD1D0006DBD9 /* Metra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metra.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5728FA42D64DD1F0006DBD9 /* MetraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5728FAE2D64DD1F0006DBD9 /* MetraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5728FC72D64DE8A0006DBD9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B5728FC92D64DE8C0006DBD9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Metra GraphsExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5728FFC2D64E5520006DBD9 /* Metra GraphsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Metra GraphsExtension.entitlements"; sourceTree = "<group>"; };
+		B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wraith Service.swift"; sourceTree = "<group>"; };
+		B57290022D64E9CD0006DBD9 /* Configuration Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configuration Item.swift"; sourceTree = "<group>"; };
+		B572900B2D677EF40006DBD9 /* Train Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Train Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B5728FF52D64E4540006DBD9 /* Exceptions for "Metra Graphs" folder in "Metra GraphsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B5728FE22D64E44E0006DBD9 /* Metra GraphsExtension */;
+		};
+		B5728FFA2D64E4A60006DBD9 /* Exceptions for "Metra" folder in "Metra" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B5728F912D64DD1D0006DBD9 /* Metra */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B5728F942D64DD1D0006DBD9 /* Metra */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5728FFA2D64E4A60006DBD9 /* Exceptions for "Metra" folder in "Metra" target */,
+			);
 			path = Metra;
+			sourceTree = "<group>";
+		};
+		B5728FE62D64E44E0006DBD9 /* Metra Graphs */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5728FF52D64E4540006DBD9 /* Exceptions for "Metra Graphs" folder in "Metra GraphsExtension" target */,
+			);
+			path = "Metra Graphs";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,17 +97,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5728FA12D64DD1F0006DBD9 /* Frameworks */ = {
+		B5728FE02D64E44E0006DBD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5728FAB2D64DD1F0006DBD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B5728FE52D64E44E0006DBD9 /* SwiftUI.framework in Frameworks */,
+				B5728FE42D64E44E0006DBD9 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +112,11 @@
 		B5728F892D64DD1D0006DBD9 = {
 			isa = PBXGroup;
 			children = (
+				B5728FFD2D64E6DA0006DBD9 /* Shared */,
+				B5728FFC2D64E5520006DBD9 /* Metra GraphsExtension.entitlements */,
 				B5728F942D64DD1D0006DBD9 /* Metra */,
+				B5728FE62D64E44E0006DBD9 /* Metra Graphs */,
+				B5728FC62D64DE8A0006DBD9 /* Frameworks */,
 				B5728F932D64DD1D0006DBD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,10 +125,36 @@
 			isa = PBXGroup;
 			children = (
 				B5728F922D64DD1D0006DBD9 /* Metra.app */,
-				B5728FA42D64DD1F0006DBD9 /* MetraTests.xctest */,
-				B5728FAE2D64DD1F0006DBD9 /* MetraUITests.xctest */,
+				B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B5728FC62D64DE8A0006DBD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5728FC72D64DE8A0006DBD9 /* WidgetKit.framework */,
+				B5728FC92D64DE8C0006DBD9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5728FFD2D64E6DA0006DBD9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B57290012D64E9C00006DBD9 /* Models */,
+				B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B57290012D64E9C00006DBD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B57290022D64E9CD0006DBD9 /* Configuration Item.swift */,
+				B572900B2D677EF40006DBD9 /* Train Data.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,10 +167,12 @@
 				B5728F8E2D64DD1D0006DBD9 /* Sources */,
 				B5728F8F2D64DD1D0006DBD9 /* Frameworks */,
 				B5728F902D64DD1D0006DBD9 /* Resources */,
+				B5728FDE2D64DE8E0006DBD9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B5728FF32D64E4540006DBD9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B5728F942D64DD1D0006DBD9 /* Metra */,
@@ -105,45 +184,27 @@
 			productReference = B5728F922D64DD1D0006DBD9 /* Metra.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B5728FA32D64DD1F0006DBD9 /* MetraTests */ = {
+		B5728FE22D64E44E0006DBD9 /* Metra GraphsExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5728FBB2D64DD1F0006DBD9 /* Build configuration list for PBXNativeTarget "MetraTests" */;
+			buildConfigurationList = B5728FF62D64E4540006DBD9 /* Build configuration list for PBXNativeTarget "Metra GraphsExtension" */;
 			buildPhases = (
-				B5728FA02D64DD1F0006DBD9 /* Sources */,
-				B5728FA12D64DD1F0006DBD9 /* Frameworks */,
-				B5728FA22D64DD1F0006DBD9 /* Resources */,
+				B5728FDF2D64E44E0006DBD9 /* Sources */,
+				B5728FE02D64E44E0006DBD9 /* Frameworks */,
+				B5728FE12D64E44E0006DBD9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B5728FA62D64DD1F0006DBD9 /* PBXTargetDependency */,
 			);
-			name = MetraTests;
+			fileSystemSynchronizedGroups = (
+				B5728FE62D64E44E0006DBD9 /* Metra Graphs */,
+			);
+			name = "Metra GraphsExtension";
 			packageProductDependencies = (
 			);
-			productName = MetraTests;
-			productReference = B5728FA42D64DD1F0006DBD9 /* MetraTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		B5728FAD2D64DD1F0006DBD9 /* MetraUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5728FBE2D64DD1F0006DBD9 /* Build configuration list for PBXNativeTarget "MetraUITests" */;
-			buildPhases = (
-				B5728FAA2D64DD1F0006DBD9 /* Sources */,
-				B5728FAB2D64DD1F0006DBD9 /* Frameworks */,
-				B5728FAC2D64DD1F0006DBD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B5728FB02D64DD1F0006DBD9 /* PBXTargetDependency */,
-			);
-			name = MetraUITests;
-			packageProductDependencies = (
-			);
-			productName = MetraUITests;
-			productReference = B5728FAE2D64DD1F0006DBD9 /* MetraUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			productName = "Metra GraphsExtension";
+			productReference = B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -158,13 +219,8 @@
 					B5728F912D64DD1D0006DBD9 = {
 						CreatedOnToolsVersion = 16.2;
 					};
-					B5728FA32D64DD1F0006DBD9 = {
+					B5728FE22D64E44E0006DBD9 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = B5728F912D64DD1D0006DBD9;
-					};
-					B5728FAD2D64DD1F0006DBD9 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = B5728F912D64DD1D0006DBD9;
 					};
 				};
 			};
@@ -183,8 +239,7 @@
 			projectRoot = "";
 			targets = (
 				B5728F912D64DD1D0006DBD9 /* Metra */,
-				B5728FA32D64DD1F0006DBD9 /* MetraTests */,
-				B5728FAD2D64DD1F0006DBD9 /* MetraUITests */,
+				B5728FE22D64E44E0006DBD9 /* Metra GraphsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -197,14 +252,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5728FA22D64DD1F0006DBD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5728FAC2D64DD1F0006DBD9 /* Resources */ = {
+		B5728FE12D64E44E0006DBD9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,35 +266,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B57290032D64E9CD0006DBD9 /* Configuration Item.swift in Sources */,
+				B572900C2D677EF40006DBD9 /* Train Data.swift in Sources */,
+				B5728FFF2D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5728FA02D64DD1F0006DBD9 /* Sources */ = {
+		B5728FDF2D64E44E0006DBD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5728FAA2D64DD1F0006DBD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B57290002D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
+				B57290042D64E9CD0006DBD9 /* Configuration Item.swift in Sources */,
+				B572900D2D677EF40006DBD9 /* Train Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B5728FA62D64DD1F0006DBD9 /* PBXTargetDependency */ = {
+		B5728FF32D64E4540006DBD9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5728F912D64DD1D0006DBD9 /* Metra */;
-			targetProxy = B5728FA52D64DD1F0006DBD9 /* PBXContainerItemProxy */;
-		};
-		B5728FB02D64DD1F0006DBD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B5728F912D64DD1D0006DBD9 /* Metra */;
-			targetProxy = B5728FAF2D64DD1F0006DBD9 /* PBXContainerItemProxy */;
+			target = B5728FE22D64E44E0006DBD9 /* Metra GraphsExtension */;
+			targetProxy = B5728FF22D64E4540006DBD9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -375,12 +417,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Metra/Metra.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Metra/Preview Content\"";
 				DEVELOPMENT_TEAM = 6M38R97L4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Metra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -404,12 +448,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Metra/Metra.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Metra/Preview Content\"";
 				DEVELOPMENT_TEAM = 6M38R97L4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Metra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,75 +474,59 @@
 			};
 			name = Release;
 		};
-		B5728FBC2D64DD1F0006DBD9 /* Debug */ = {
+		B5728FF72D64E4540006DBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Metra GraphsExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6M38R97L4D;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				INFOPLIST_FILE = "Metra Graphs/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Metra Graphs";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zgamelogic.MetraTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "zgamelogic.Metra.Metra-Graphs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metra.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Metra";
 			};
 			name = Debug;
 		};
-		B5728FBD2D64DD1F0006DBD9 /* Release */ = {
+		B5728FF82D64E4540006DBD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Metra GraphsExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6M38R97L4D;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				INFOPLIST_FILE = "Metra Graphs/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Metra Graphs";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zgamelogic.MetraTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "zgamelogic.Metra.Metra-Graphs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metra.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Metra";
-			};
-			name = Release;
-		};
-		B5728FBF2D64DD1F0006DBD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6M38R97L4D;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zgamelogic.MetraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Metra;
-			};
-			name = Debug;
-		};
-		B5728FC02D64DD1F0006DBD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6M38R97L4D;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zgamelogic.MetraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Metra;
 			};
 			name = Release;
 		};
@@ -521,20 +551,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5728FBB2D64DD1F0006DBD9 /* Build configuration list for PBXNativeTarget "MetraTests" */ = {
+		B5728FF62D64E4540006DBD9 /* Build configuration list for PBXNativeTarget "Metra GraphsExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B5728FBC2D64DD1F0006DBD9 /* Debug */,
-				B5728FBD2D64DD1F0006DBD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5728FBE2D64DD1F0006DBD9 /* Build configuration list for PBXNativeTarget "MetraUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5728FBF2D64DD1F0006DBD9 /* Debug */,
-				B5728FC02D64DD1F0006DBD9 /* Release */,
+				B5728FF72D64E4540006DBD9 /* Debug */,
+				B5728FF82D64E4540006DBD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
