@@ -8,11 +8,23 @@
 import Foundation
 
 struct WraithService {
-//    static let BASE_URL = "http://zgamelogic.com:2002/train"
+    #if targetEnvironment(simulator)
     static let BASE_URL = "http://localhost:2004/train"
+    #else
+    static let BASE_URL = "http://zgamelogic.com:2002/train"
+    #endif
     
     public static func getRoutesWithStops(completion: @escaping (Result<[MetraRouteWithStops], Error>) -> Void) {
         getData(from: "/routes", completion)
+    }
+    
+    public static func searchForStopTimes(route: String, to: String, from: String, completion: @escaping(Result<[MetraTrainSearchResult], Error>) -> Void) {
+        let query = [
+            URLQueryItem(name: "route", value: route),
+            URLQueryItem(name: "to", value: to),
+            URLQueryItem(name: "from", value: from)
+        ]
+        getData(from: "/search", query: query, completion)
     }
     
     private static func getData<T: Decodable>(
