@@ -9,25 +9,34 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+    func placeholder(in context: Context) -> MetraTrainTimelineEntry {
+        PreviewData.data
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> MetraTrainTimelineEntry {
+        PreviewData.data
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<MetraTrainTimelineEntry> {
+        var entries: [MetraTrainTimelineEntry]
+        let sharedDefaults = UserDefaults(suiteName: "group.com.zgamelogic.metra")
+        if let route = sharedDefaults?.string(forKey: "routeSelected"),
+           let to = sharedDefaults?.string(forKey: "toSelected"),
+           let lineColor = sharedDefaults?.string(forKey: "lineColor"),
+           let from = sharedDefaults?.string(forKey: "fromSelected") {
+            let result = WraithService.searchForStopTimesSync(route: route, to: to, from: from)
+            switch(result){
+            case .success(let data):
+                entries = [MetraTrainTimelineEntry(date: .now, results: data, lineColor: lineColor, from: from, to: to)]
+            case .failure(let error):
+                print(error)
+                entries = [MetraTrainTimelineEntry(date: .now, results: [], lineColor: "000000", from: "", to: "")]
+            }
+        } else {
+            print("We got here")
+            entries = [MetraTrainTimelineEntry(date: .now, results: [], lineColor: "000000", from: "", to: "")]
         }
-
+        
         return Timeline(entries: entries, policy: .atEnd)
     }
 
@@ -36,21 +45,37 @@ struct Provider: AppIntentTimelineProvider {
 //    }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct MetraTrainTimelineEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationAppIntent
+    let results: [MetraTrainSearchResult]
+    let lineColor: String
+    let from: String
+    let to: String
+    var isValid: Bool { !results.isEmpty }
+    
 }
 
-struct Metra_GraphsEntryView : View {
+struct Metra_GraphsEntryView: View {
+    @AppStorage("routeSelected", store: UserDefaults(suiteName: "group.com.zgamelogic.metra")) private var route: String = "none"
+    @AppStorage("fromSelected", store: UserDefaults(suiteName: "group.com.zgamelogic.metra")) private var from: String = "none"
+    @AppStorage("toSelected", store: UserDefaults(suiteName: "group.com.zgamelogic.metra")) private var to: String = "none"
+    @AppStorage("lineColor", store: UserDefaults(suiteName: "group.com.zgamelogic.metra")) private var lineColor: String = "000000"
+
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        if entry.isValid {
+            let limitedResults = Array(entry.results.prefix(6))
+            let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+            Text("\(from) -> \(to)")
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(limitedResults, id: \.trainNumber) { trainRoute in
+                    TrainSearchResult(result: trainRoute, lineColor: lineColor)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                }
+            }
+        } else {
+            Text("Please open the app and select your route and stations")
         }
     }
 }
@@ -60,29 +85,48 @@ struct Metra_Graphs: Widget {
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            Metra_GraphsEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
+            Metra_GraphsEntryView(entry: entry).containerBackground(.fill.tertiary, for: .widget)
         }
+        .configurationDisplayName("Metra Schedule")
+        .description("A schedule widget.")
+        .supportedFamilies([.systemMedium])
     }
 }
 
 extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
-        return intent
-    }
+//    fileprivate static var smiley: ConfigurationAppIntent {
+//        let intent = ConfigurationAppIntent()
+//        intent.favoriteEmoji = "😀"
+//        return intent
+//    }
+//    
+//    fileprivate static var starEyes: ConfigurationAppIntent {
+//        let intent = ConfigurationAppIntent()
+//        intent.favoriteEmoji = "🤩"
+//        return intent
+//    }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     Metra_Graphs()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    PreviewData.data
+}
+
+#Preview(as: .systemMedium) {
+    Metra_Graphs()
+} timeline: {
+    MetraTrainTimelineEntry(date: .now, results: [], lineColor: "000000", from: "", to: "")
+}
+
+
+struct PreviewData {
+    static let data: MetraTrainTimelineEntry = MetraTrainTimelineEntry(date: .now, results: [
+        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 30), arrive: DateComponents(hour: 15, minute: 15), trainNumber: "35"),
+        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 40), arrive: DateComponents(hour: 15, minute: 25), trainNumber: "37"),
+        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 50), arrive: DateComponents(hour: 15, minute: 35), trainNumber: "39"),
+        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 30), arrive: DateComponents(hour: 15, minute: 15), trainNumber: "41"),
+        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 40), arrive: DateComponents(hour: 15, minute: 25), trainNumber: "43"),
+        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 50), arrive: DateComponents(hour: 15, minute: 35), trainNumber: "45")
+    ], lineColor: "000000", from: "Geneva", to: "Chicago OTC")
 }

@@ -27,6 +27,15 @@ struct WraithService {
         getData(from: "/search", query: query, completion)
     }
     
+    public static func searchForStopTimesSync(route: String, to: String, from: String) -> Result<[MetraTrainSearchResult], Error> {
+        let query = [
+            URLQueryItem(name: "route", value: route),
+            URLQueryItem(name: "to", value: to),
+            URLQueryItem(name: "from", value: from)
+        ]
+        return getDataSynchronously(from: "/search", query: query)
+    }
+    
     private static func getData<T: Decodable>(
         from path: String,
         query: [URLQueryItem]? = nil,

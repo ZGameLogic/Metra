@@ -10,7 +10,6 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var configItems: [ConfigItem]
 
     var body: some View {
         MetraView().environmentObject(MetraDataModel())
@@ -34,5 +33,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: ConfigItem.self, inMemory: true)
 }

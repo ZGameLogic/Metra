@@ -12,10 +12,10 @@
 		B5728FF42D64E4540006DBD9 /* Metra GraphsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B5728FFF2D64E6F50006DBD9 /* Wraith Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */; };
 		B57290002D64E6F50006DBD9 /* Wraith Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */; };
-		B57290032D64E9CD0006DBD9 /* Configuration Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57290022D64E9CD0006DBD9 /* Configuration Item.swift */; };
-		B57290042D64E9CD0006DBD9 /* Configuration Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57290022D64E9CD0006DBD9 /* Configuration Item.swift */; };
 		B572900C2D677EF40006DBD9 /* Train Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572900B2D677EF40006DBD9 /* Train Data.swift */; };
 		B572900D2D677EF40006DBD9 /* Train Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572900B2D677EF40006DBD9 /* Train Data.swift */; };
+		B58AE7C62D68D4D5009F7964 /* Train Search Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */; };
+		B58AE7D72D68D9F6009F7964 /* Train Search Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 		B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Metra GraphsExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5728FFC2D64E5520006DBD9 /* Metra GraphsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Metra GraphsExtension.entitlements"; sourceTree = "<group>"; };
 		B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wraith Service.swift"; sourceTree = "<group>"; };
-		B57290022D64E9CD0006DBD9 /* Configuration Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Configuration Item.swift"; sourceTree = "<group>"; };
 		B572900B2D677EF40006DBD9 /* Train Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Train Data.swift"; sourceTree = "<group>"; };
+		B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Train Search Result.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -142,6 +142,7 @@
 		B5728FFD2D64E6DA0006DBD9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B58AE7D62D68D9E5009F7964 /* Views */,
 				B57290012D64E9C00006DBD9 /* Models */,
 				B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */,
 			);
@@ -151,10 +152,17 @@
 		B57290012D64E9C00006DBD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B57290022D64E9CD0006DBD9 /* Configuration Item.swift */,
 				B572900B2D677EF40006DBD9 /* Train Data.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B58AE7D62D68D9E5009F7964 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57290032D64E9CD0006DBD9 /* Configuration Item.swift in Sources */,
 				B572900C2D677EF40006DBD9 /* Train Data.swift in Sources */,
 				B5728FFF2D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
+				B58AE7C62D68D4D5009F7964 /* Train Search Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,8 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57290002D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
-				B57290042D64E9CD0006DBD9 /* Configuration Item.swift in Sources */,
 				B572900D2D677EF40006DBD9 /* Train Data.swift in Sources */,
+				B58AE7D72D68D9F6009F7964 /* Train Search Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
