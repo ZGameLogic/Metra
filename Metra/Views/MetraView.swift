@@ -39,6 +39,11 @@ struct MetraView: View {
                             Text($0.stopName).tag($0.stopId)
                         }
                     }.disabled(routeSelected == "none")
+                    Button("Switch") {
+                        let old = toSelected
+                        toSelected = fromSelected
+                        fromSelected = old
+                    }.disabled(routeSelected == "none" || toSelected == "none" || fromSelected == "none")
                 }
                 if (!stopTimes.isEmpty) {
                     Section("Times") {
