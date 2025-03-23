@@ -18,9 +18,15 @@ struct TrainSearchResult: View {
                 .padding(.vertical, 5)
                 .background(Capsule().fill(Color(hex: "#\(lineColor)")))
                 .foregroundColor(.white)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
             VStack {
                 Text(result.departString)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
                 Text(result.arriveString)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
             }
             Spacer()
         }

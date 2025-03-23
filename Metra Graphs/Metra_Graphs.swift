@@ -65,14 +65,17 @@ struct Metra_GraphsEntryView: View {
 
     var body: some View {
         if entry.isValid {
-            let limitedResults = Array(entry.results.prefix(6))
-            let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
-            Text("\(from) -> \(to)")
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(limitedResults, id: \.trainNumber) { trainRoute in
-                    TrainSearchResult(result: trainRoute, lineColor: lineColor)
-                        .frame(maxWidth: .infinity, minHeight: 50)
+            VStack {
+                let limitedResults = Array(entry.results.prefix(6))
+                let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+                Text("\(from) -> \(to)")
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(limitedResults, id: \.trainNumber) { trainRoute in
+                        TrainSearchResult(result: trainRoute, lineColor: lineColor)
+                            .frame(maxWidth: .infinity, minHeight: 50)
+                    }
                 }
+                Spacer()
             }
         } else {
             Text("Please open the app and select your route and stations")
@@ -108,13 +111,23 @@ extension ConfigurationAppIntent {
 }
 
 #Preview(as: .systemMedium) {
-    Metra_Graphs()
+    let mockDefaults = UserDefaults(suiteName: "group.com.zgamelogic.metra")!
+    mockDefaults.set("MockRoute", forKey: "routeSelected")
+    mockDefaults.set("Chicago OTC", forKey: "fromSelected")
+    mockDefaults.set("Geneva", forKey: "toSelected")
+    mockDefaults.set("FF5733", forKey: "lineColor")
+    return Metra_Graphs()
 } timeline: {
     PreviewData.data
 }
 
 #Preview(as: .systemMedium) {
-    Metra_Graphs()
+    let mockDefaults = UserDefaults(suiteName: "PreviewSuite")!
+    mockDefaults.set("none", forKey: "routeSelected")
+    mockDefaults.set("none", forKey: "fromSelected")
+    mockDefaults.set("none", forKey: "toSelected")
+    mockDefaults.set("none", forKey: "lineColor")
+    return Metra_Graphs()
 } timeline: {
     MetraTrainTimelineEntry(date: .now, results: [], lineColor: "000000", from: "", to: "")
 }
@@ -122,7 +135,7 @@ extension ConfigurationAppIntent {
 
 struct PreviewData {
     static let data: MetraTrainTimelineEntry = MetraTrainTimelineEntry(date: .now, results: [
-        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 30), arrive: DateComponents(hour: 15, minute: 15), trainNumber: "35"),
+        MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 30), arrive: DateComponents(hour: 15, minute: 15), trainNumber: "350"),
         MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 40), arrive: DateComponents(hour: 15, minute: 25), trainNumber: "37"),
         MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 50), arrive: DateComponents(hour: 15, minute: 35), trainNumber: "39"),
         MetraTrainSearchResult(depart: DateComponents(hour: 14, minute: 30), arrive: DateComponents(hour: 15, minute: 15), trainNumber: "41"),

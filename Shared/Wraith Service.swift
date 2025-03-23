@@ -11,7 +11,7 @@ struct WraithService {
     #if targetEnvironment(simulator)
     static let BASE_URL = "http://localhost:2004/train"
     #else
-    static let BASE_URL = "https://zgamelogic.com:2002/train"
+    static let BASE_URL = "https://wraith.zgamelogic.com/train"
     #endif
     
     public static func getRoutesWithStops(completion: @escaping (Result<[MetraRouteWithStops], Error>) -> Void) {

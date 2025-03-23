@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51CE2442D6A9A2C000F34DE /* Arrow Stop View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CE2432D6A9A2C000F34DE /* Arrow Stop View.swift */; };
+		B51CE2452D6A9A2C000F34DE /* Arrow Stop View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CE2432D6A9A2C000F34DE /* Arrow Stop View.swift */; };
 		B5728FE42D64E44E0006DBD9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5728FC72D64DE8A0006DBD9 /* WidgetKit.framework */; };
 		B5728FE52D64E44E0006DBD9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5728FC92D64DE8C0006DBD9 /* SwiftUI.framework */; };
 		B5728FF42D64E4540006DBD9 /* Metra GraphsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -43,6 +45,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B51CE2432D6A9A2C000F34DE /* Arrow Stop View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arrow Stop View.swift"; sourceTree = "<group>"; };
+		B5618EC32D73527F00AF794D /* Geneva.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Geneva.gpx; path = "../../../Downloads/gpx-files/Geneva.gpx"; sourceTree = "<group>"; };
+		B5618EC42D73527F00AF794D /* Chicago.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Chicago.gpx; path = "../../../Downloads/gpx-files/Chicago.gpx"; sourceTree = "<group>"; };
 		B5728F922D64DD1D0006DBD9 /* Metra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5728FC72D64DE8A0006DBD9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B5728FC92D64DE8C0006DBD9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -112,6 +117,8 @@
 		B5728F892D64DD1D0006DBD9 = {
 			isa = PBXGroup;
 			children = (
+				B5618EC42D73527F00AF794D /* Chicago.gpx */,
+				B5618EC32D73527F00AF794D /* Geneva.gpx */,
 				B5728FFD2D64E6DA0006DBD9 /* Shared */,
 				B5728FFC2D64E5520006DBD9 /* Metra GraphsExtension.entitlements */,
 				B5728F942D64DD1D0006DBD9 /* Metra */,
@@ -161,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */,
+				B51CE2432D6A9A2C000F34DE /* Arrow Stop View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51CE2442D6A9A2C000F34DE /* Arrow Stop View.swift in Sources */,
 				B572900C2D677EF40006DBD9 /* Train Data.swift in Sources */,
 				B5728FFF2D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
 				B58AE7C62D68D4D5009F7964 /* Train Search Result.swift in Sources */,
@@ -287,6 +296,7 @@
 				B57290002D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
 				B572900D2D677EF40006DBD9 /* Train Data.swift in Sources */,
 				B58AE7D72D68D9F6009F7964 /* Train Search Result.swift in Sources */,
+				B51CE2452D6A9A2C000F34DE /* Arrow Stop View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +443,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Metra/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs access to your location to detect when you enter or leave Chicago.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs background location access to detect when you enter or exit Chicago.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to determine your proximity to Chicago.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +477,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Metra/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs access to your location to detect when you enter or leave Chicago.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs background location access to detect when you enter or exit Chicago.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to determine your proximity to Chicago.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

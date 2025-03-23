@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct MetraApp: App {
+    @StateObject private var locationManager = LocationManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().onAppear(perform: locationManager.startGeofencing)
         }
     }
 }
