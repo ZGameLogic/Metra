@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ActivityKit
 
 struct TrainSearchResult: View {
     let result: MetraTrainSearchResult
@@ -29,6 +30,54 @@ struct TrainSearchResult: View {
                     .minimumScaleFactor(0.5)
             }
             Spacer()
+        }.onTapGesture {
+            do {
+                let adventure = MetraLiveAttributes(name: "Ben")
+                let initialState = MetraLiveAttributes.ContentState(emoji: "L")
+                
+                print("Starting activity")
+                let activity = try Activity.request(
+                    attributes: adventure,
+                    content: .init(state: initialState, staleDate: nil),
+                    pushType: .token
+                )
+//                let adventure = TrainActivityAttributes(lineColorHex: lineColor)
+//                let initialState = TrainActivityAttributes.ContentState(
+//                    trainNumber: result.trainNumber,
+//                    departureTime: Date(),
+//                    arrivalTime: Date()
+//                )
+//                
+//                print("Starting activity")
+//                let activity = try Activity.request(
+//                    attributes: adventure,
+//                    content: .init(state: initialState, staleDate: nil),
+//                    pushType: .token
+//                )
+//                let attributes = TrainActivityAttributes(lineColorHex: lineColor)
+//                let contentState = TrainActivityAttributes.ContentState(
+//                    trainNumber: result.trainNumber,
+//                    departureTime: departDate,
+//                    arrivalTime: arriveDate
+//                )
+//
+//                let content = ActivityContent(state: contentState, staleDate: nil)
+//                let activity = try Activity<TrainActivityAttributes>.request(
+//                    attributes: attributes,
+//                    content: content,
+//                    pushType: nil
+//                )
+
+//                Task {
+//                    for await pushToken in activity.pushTokenUpdates {
+//                        let p = pushToken.reduce(""){ $0 + String(format: "%02x", $1)}
+//                        WraithService.registerLiveActivity(token: p, trainNumer: result.trainNumber) { _ in }
+//                        print(activity.id)
+//                    }
+//                }
+            } catch {
+                print("Error starting Live Activity: \(error)")
+            }
         }
     }
 }
@@ -47,6 +96,16 @@ extension Color {
 
         self.init(red: red, green: green, blue: blue)
     }
+}
+
+struct TrainActivityAttributes: ActivityAttributes {
+    public struct ContentState: Codable, Hashable {
+        var trainNumber: String
+        var departureTime: Date
+        var arrivalTime: Date
+    }
+
+    var lineColorHex: String
 }
 
 #Preview {

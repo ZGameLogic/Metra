@@ -11,8 +11,17 @@ struct WraithService {
     #if targetEnvironment(simulator)
     static let BASE_URL = "http://localhost:2004/train"
     #else
-    static let BASE_URL = "https://wraith.zgamelogic.com/train"
+//    static let BASE_URL = "https://wraith.zgamelogic.com/train"
+    static let BASE_URL = "http://192.168.1.100:2004/train"
     #endif
+    
+    public static func registerLiveActivity(token: String, trainNumer: String, completion: @escaping (Result<String, Error>) -> Void) {
+        createData(from: "\(BASE_URL)/register/live/\(trainNumer)/\(token)", data: "", completion)
+    }
+    
+    public static func registrationEndpoint(deviceId: String, completion: @escaping (Result<String, Error>) -> Void) {
+        createData(from: "\(BASE_URL)/register/\(deviceId)", data: "", completion)
+    }
     
     public static func getRoutesWithStops(completion: @escaping (Result<[MetraRouteWithStops], Error>) -> Void) {
         getData(from: "/routes", completion)
@@ -78,5 +87,41 @@ struct WraithService {
         
         semaphore.wait()
         return result
+    }
+    
+    private static func createData<T: Encodable, D: Decodable>(
+        from urlString: String,
+        data dataObject: T,
+        _ completion: @escaping (Result<D, Error>) -> Void
+    ) {
+        let url = URL(string: urlString)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(dataObject)
+            request.httpBody = jsonData
+        } catch {
+            completion(.failure(error))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(URLError(.badServerResponse)))
+                return
+            }
+            do {
+                let decodedData = try JSONDecoder().decode(D.self, from: data)
+                completion(.success(decodedData))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
     }
 }

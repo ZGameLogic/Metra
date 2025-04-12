@@ -18,6 +18,12 @@
 		B572900D2D677EF40006DBD9 /* Train Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B572900B2D677EF40006DBD9 /* Train Data.swift */; };
 		B58AE7C62D68D4D5009F7964 /* Train Search Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */; };
 		B58AE7D72D68D9F6009F7964 /* Train Search Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */; };
+		B5E7DEE52DAAC74F00F7463A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5728FC72D64DE8A0006DBD9 /* WidgetKit.framework */; };
+		B5E7DEE62DAAC74F00F7463A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5728FC92D64DE8C0006DBD9 /* SwiftUI.framework */; };
+		B5E7DEF32DAAC75000F7463A /* Metra LiveExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B5E7DEE42DAAC74F00F7463A /* Metra LiveExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5E7DEFB2DAAC8D500F7463A /* Shared Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E7DEFA2DAAC8D500F7463A /* Shared Data.swift */; };
+		B5E7DEFC2DAAC8D500F7463A /* Shared Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E7DEFA2DAAC8D500F7463A /* Shared Data.swift */; };
+		B5E7DEFD2DAAC8D500F7463A /* Shared Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E7DEFA2DAAC8D500F7463A /* Shared Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +33,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B5728FE22D64E44E0006DBD9;
 			remoteInfo = "Metra GraphsExtension";
+		};
+		B5E7DEF12DAAC75000F7463A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5728F8A2D64DD1D0006DBD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5E7DEE32DAAC74F00F7463A;
+			remoteInfo = "Metra LiveExtension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,6 +51,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				B5728FF42D64E4540006DBD9 /* Metra GraphsExtension.appex in Embed Foundation Extensions */,
+				B5E7DEF32DAAC75000F7463A /* Metra LiveExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,8 +60,6 @@
 
 /* Begin PBXFileReference section */
 		B51CE2432D6A9A2C000F34DE /* Arrow Stop View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Arrow Stop View.swift"; sourceTree = "<group>"; };
-		B5618EC32D73527F00AF794D /* Geneva.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Geneva.gpx; path = "../../../Downloads/gpx-files/Geneva.gpx"; sourceTree = "<group>"; };
-		B5618EC42D73527F00AF794D /* Chicago.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Chicago.gpx; path = "../../../Downloads/gpx-files/Chicago.gpx"; sourceTree = "<group>"; };
 		B5728F922D64DD1D0006DBD9 /* Metra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5728FC72D64DE8A0006DBD9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B5728FC92D64DE8C0006DBD9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -56,6 +68,8 @@
 		B5728FFE2D64E6F50006DBD9 /* Wraith Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wraith Service.swift"; sourceTree = "<group>"; };
 		B572900B2D677EF40006DBD9 /* Train Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Train Data.swift"; sourceTree = "<group>"; };
 		B58AE7B92D68D4D5009F7964 /* Train Search Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Train Search Result.swift"; sourceTree = "<group>"; };
+		B5E7DEE42DAAC74F00F7463A /* Metra LiveExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Metra LiveExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5E7DEFA2DAAC8D500F7463A /* Shared Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shared Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -72,6 +86,13 @@
 				Info.plist,
 			);
 			target = B5728F912D64DD1D0006DBD9 /* Metra */;
+		};
+		B5E7DEF72DAAC75100F7463A /* Exceptions for "Metra Live" folder in "Metra LiveExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B5E7DEE32DAAC74F00F7463A /* Metra LiveExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -90,6 +111,14 @@
 				B5728FF52D64E4540006DBD9 /* Exceptions for "Metra Graphs" folder in "Metra GraphsExtension" target */,
 			);
 			path = "Metra Graphs";
+			sourceTree = "<group>";
+		};
+		B5E7DEE72DAAC74F00F7463A /* Metra Live */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B5E7DEF72DAAC75100F7463A /* Exceptions for "Metra Live" folder in "Metra LiveExtension" target */,
+			);
+			path = "Metra Live";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -111,18 +140,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5E7DEE12DAAC74F00F7463A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E7DEE62DAAC74F00F7463A /* SwiftUI.framework in Frameworks */,
+				B5E7DEE52DAAC74F00F7463A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B5728F892D64DD1D0006DBD9 = {
 			isa = PBXGroup;
 			children = (
-				B5618EC42D73527F00AF794D /* Chicago.gpx */,
-				B5618EC32D73527F00AF794D /* Geneva.gpx */,
 				B5728FFD2D64E6DA0006DBD9 /* Shared */,
 				B5728FFC2D64E5520006DBD9 /* Metra GraphsExtension.entitlements */,
 				B5728F942D64DD1D0006DBD9 /* Metra */,
 				B5728FE62D64E44E0006DBD9 /* Metra Graphs */,
+				B5E7DEE72DAAC74F00F7463A /* Metra Live */,
 				B5728FC62D64DE8A0006DBD9 /* Frameworks */,
 				B5728F932D64DD1D0006DBD9 /* Products */,
 			);
@@ -133,6 +170,7 @@
 			children = (
 				B5728F922D64DD1D0006DBD9 /* Metra.app */,
 				B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */,
+				B5E7DEE42DAAC74F00F7463A /* Metra LiveExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				B572900B2D677EF40006DBD9 /* Train Data.swift */,
+				B5E7DEFA2DAAC8D500F7463A /* Shared Data.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +228,7 @@
 			);
 			dependencies = (
 				B5728FF32D64E4540006DBD9 /* PBXTargetDependency */,
+				B5E7DEF22DAAC75000F7463A /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B5728F942D64DD1D0006DBD9 /* Metra */,
@@ -222,6 +262,28 @@
 			productReference = B5728FE32D64E44E0006DBD9 /* Metra GraphsExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		B5E7DEE32DAAC74F00F7463A /* Metra LiveExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5E7DEF42DAAC75100F7463A /* Build configuration list for PBXNativeTarget "Metra LiveExtension" */;
+			buildPhases = (
+				B5E7DEE02DAAC74F00F7463A /* Sources */,
+				B5E7DEE12DAAC74F00F7463A /* Frameworks */,
+				B5E7DEE22DAAC74F00F7463A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B5E7DEE72DAAC74F00F7463A /* Metra Live */,
+			);
+			name = "Metra LiveExtension";
+			packageProductDependencies = (
+			);
+			productName = "Metra LiveExtension";
+			productReference = B5E7DEE42DAAC74F00F7463A /* Metra LiveExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,14 +291,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					B5728F912D64DD1D0006DBD9 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 					B5728FE22D64E44E0006DBD9 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					B5E7DEE32DAAC74F00F7463A = {
+						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
@@ -256,6 +321,7 @@
 			targets = (
 				B5728F912D64DD1D0006DBD9 /* Metra */,
 				B5728FE22D64E44E0006DBD9 /* Metra GraphsExtension */,
+				B5E7DEE32DAAC74F00F7463A /* Metra LiveExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -275,6 +341,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5E7DEE22DAAC74F00F7463A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -284,6 +357,7 @@
 			files = (
 				B51CE2442D6A9A2C000F34DE /* Arrow Stop View.swift in Sources */,
 				B572900C2D677EF40006DBD9 /* Train Data.swift in Sources */,
+				B5E7DEFB2DAAC8D500F7463A /* Shared Data.swift in Sources */,
 				B5728FFF2D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
 				B58AE7C62D68D4D5009F7964 /* Train Search Result.swift in Sources */,
 			);
@@ -295,8 +369,17 @@
 			files = (
 				B57290002D64E6F50006DBD9 /* Wraith Service.swift in Sources */,
 				B572900D2D677EF40006DBD9 /* Train Data.swift in Sources */,
+				B5E7DEFC2DAAC8D500F7463A /* Shared Data.swift in Sources */,
 				B58AE7D72D68D9F6009F7964 /* Train Search Result.swift in Sources */,
 				B51CE2452D6A9A2C000F34DE /* Arrow Stop View.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E7DEE02DAAC74F00F7463A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E7DEFD2DAAC8D500F7463A /* Shared Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +390,11 @@
 			isa = PBXTargetDependency;
 			target = B5728FE22D64E44E0006DBD9 /* Metra GraphsExtension */;
 			targetProxy = B5728FF22D64E4540006DBD9 /* PBXContainerItemProxy */;
+		};
+		B5E7DEF22DAAC75000F7463A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5E7DEE32DAAC74F00F7463A /* Metra LiveExtension */;
+			targetProxy = B5E7DEF12DAAC75000F7463A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -346,6 +434,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6M38R97L4D;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -409,6 +498,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6M38R97L4D;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -439,10 +529,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Metra/Preview Content\"";
-				DEVELOPMENT_TEAM = 6M38R97L4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Metra/Info.plist;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs access to your location to detect when you enter or leave Chicago.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs background location access to detect when you enter or exit Chicago.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to determine your proximity to Chicago.";
@@ -473,10 +563,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Metra/Preview Content\"";
-				DEVELOPMENT_TEAM = 6M38R97L4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Metra/Info.plist;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs access to your location to detect when you enter or leave Chicago.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs background location access to detect when you enter or exit Chicago.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access to determine your proximity to Chicago.";
@@ -506,7 +596,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Metra GraphsExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6M38R97L4D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Metra Graphs/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Metra Graphs";
@@ -534,7 +623,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Metra GraphsExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6M38R97L4D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Metra Graphs/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Metra Graphs";
@@ -546,6 +634,60 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "zgamelogic.Metra.Metra-Graphs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5E7DEF52DAAC75100F7463A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Metra Live/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Metra Live";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zgamelogic.Metra.Metra-Live";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5E7DEF62DAAC75100F7463A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Metra Live/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Metra Live";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zgamelogic.Metra.Metra-Live";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -580,6 +722,15 @@
 			buildConfigurations = (
 				B5728FF72D64E4540006DBD9 /* Debug */,
 				B5728FF82D64E4540006DBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5E7DEF42DAAC75100F7463A /* Build configuration list for PBXNativeTarget "Metra LiveExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5E7DEF52DAAC75100F7463A /* Debug */,
+				B5E7DEF62DAAC75100F7463A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
