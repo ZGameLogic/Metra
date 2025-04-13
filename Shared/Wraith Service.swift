@@ -11,8 +11,8 @@ struct WraithService {
     #if targetEnvironment(simulator)
     static let BASE_URL = "http://localhost:2004/train"
     #else
-//    static let BASE_URL = "https://wraith.zgamelogic.com/train"
-    static let BASE_URL = "http://192.168.1.100:2004/train"
+    static let BASE_URL = "https://wraith.zgamelogic.com/train"
+//    static let BASE_URL = "http://192.168.1.100:2004/train"
     #endif
     
     public static func registerLiveActivity(token: String, trainNumer: String, completion: @escaping (Result<String, Error>) -> Void) {

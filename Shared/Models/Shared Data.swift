@@ -10,10 +10,18 @@ import ActivityKit
 
 struct MetraLiveAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
-        // Dynamic stateful properties about your activity go here!
-        var emoji: String
+        var nextStop: String
+        var currentStop: String
+        var currentStopLeaveTime: DateComponents
+        var nextStopArrivalTime: DateComponents
+        var delay: String?
+        var finalDesitinationArrivalTime: DateComponents
     }
 
-    // Fixed non-changing properties about your activity go here!
-    var name: String
+    var toStation: String
+    var fromStation: String
+    var startTime: DateComponents
+    var arrivalTime: DateComponents
+    var trainNumber: String
+    var lineColor: String
 }

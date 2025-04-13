@@ -32,8 +32,8 @@ struct TrainSearchResult: View {
             Spacer()
         }.onTapGesture {
             do {
-                let adventure = MetraLiveAttributes(name: "Ben")
-                let initialState = MetraLiveAttributes.ContentState(emoji: "L")
+                let adventure = MetraLiveAttributes(toStation: "Geneva", fromStation: "Chicago OTC", startTime: result.depart, arrivalTime: result.arrive, trainNumber: result.trainNumber, lineColor: lineColor)
+                let initialState = MetraLiveAttributes.ContentState(nextStop: "Elburn", currentStop: "Winfield", currentStopLeaveTime: DateComponents(), nextStopArrivalTime: DateComponents(), finalDesitinationArrivalTime: DateComponents())
                 
                 print("Starting activity")
                 let activity = try Activity.request(
@@ -41,40 +41,14 @@ struct TrainSearchResult: View {
                     content: .init(state: initialState, staleDate: nil),
                     pushType: .token
                 )
-//                let adventure = TrainActivityAttributes(lineColorHex: lineColor)
-//                let initialState = TrainActivityAttributes.ContentState(
-//                    trainNumber: result.trainNumber,
-//                    departureTime: Date(),
-//                    arrivalTime: Date()
-//                )
-//                
-//                print("Starting activity")
-//                let activity = try Activity.request(
-//                    attributes: adventure,
-//                    content: .init(state: initialState, staleDate: nil),
-//                    pushType: .token
-//                )
-//                let attributes = TrainActivityAttributes(lineColorHex: lineColor)
-//                let contentState = TrainActivityAttributes.ContentState(
-//                    trainNumber: result.trainNumber,
-//                    departureTime: departDate,
-//                    arrivalTime: arriveDate
-//                )
-//
-//                let content = ActivityContent(state: contentState, staleDate: nil)
-//                let activity = try Activity<TrainActivityAttributes>.request(
-//                    attributes: attributes,
-//                    content: content,
-//                    pushType: nil
-//                )
-
-//                Task {
-//                    for await pushToken in activity.pushTokenUpdates {
-//                        let p = pushToken.reduce(""){ $0 + String(format: "%02x", $1)}
+                Task {
+                    for await pushToken in activity.pushTokenUpdates {
+                        let p = pushToken.reduce(""){ $0 + String(format: "%02x", $1)}
 //                        WraithService.registerLiveActivity(token: p, trainNumer: result.trainNumber) { _ in }
-//                        print(activity.id)
-//                    }
-//                }
+                        print(p)
+                        print(activity.id)
+                    }
+                }
             } catch {
                 print("Error starting Live Activity: \(error)")
             }
