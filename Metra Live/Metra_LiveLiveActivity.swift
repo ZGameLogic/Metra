@@ -30,10 +30,13 @@ struct Metra_LiveLiveActivity: Widget {
                     StationView(primary: false, time: DateComponents(hour: 13, minute: 46), station: "Elburn")
                 }
                 Text("Estimated trip arrival time: \(formattedTime(from: attributes.arrivalTime))")
-            }.scaledToFit()
-                .frame(height: 160)
-                .activityBackgroundTint(Color.gray)
-                .activitySystemActionForegroundColor(Color.black)
+            }
+            .padding()
+            .background(Color.black.opacity(0.0)) // Simulate translucent black
+            .cornerRadius(12)
+            .frame(width: .infinity)
+            .activityBackgroundTint(.clear)
+            .activitySystemActionForegroundColor(.primary)
 
         } dynamicIsland: { context in
             DynamicIsland {
